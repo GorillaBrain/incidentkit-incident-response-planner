@@ -1,0 +1,213 @@
+export interface GlossaryTerm {
+  term: string;
+  acronym?: string;
+  category: 'Concepts' | 'Threats' | 'Defense & Tooling' | 'Forensics' | 'Governance & Legal';
+  definition: string;
+  exampleOrContext: string;
+}
+
+export const CYBERSECURITY_GLOSSARY: GlossaryTerm[] = [
+  {
+    term: 'Indicator of Compromise',
+    acronym: 'IOC',
+    category: 'Concepts',
+    definition: 'Forensic artifact observed on a network or in an operating system that indicates with high confidence that a system intrusion or malware infection occurred.',
+    exampleOrContext: 'File hashes, malicious IP addresses, domain names, C2 URLs, or specific registry keys.',
+  },
+  {
+    term: 'Tactics, Techniques, and Procedures',
+    acronym: 'TTPs',
+    category: 'Concepts',
+    definition: 'The behavioral patterns, methods, and specific operational blueprints utilized by threat actors to execute attacks.',
+    exampleOrContext: 'Cataloged extensively in the MITRE ATT&CK framework (e.g., T1059 Command and Scripting Interpreter).',
+  },
+  {
+    term: 'Security Information and Event Management',
+    acronym: 'SIEM',
+    category: 'Defense & Tooling',
+    definition: 'Centralized security system that aggregates, parses, and correlates log and event data from applications, network devices, and host agents in real time.',
+    exampleOrContext: 'Splunk, Microsoft Sentinel, Elastic Security, QRadar.',
+  },
+  {
+    term: 'Security Orchestration, Automation, and Response',
+    acronym: 'SOAR',
+    category: 'Defense & Tooling',
+    definition: 'A platform that connects disparate security tools and automates repetitive incident response workflows via customizable playbooks.',
+    exampleOrContext: 'Automating the containment of a host or sending a verification Slack message to a user who flagged a phishing email.',
+  },
+  {
+    term: 'Endpoint Detection and Response',
+    acronym: 'EDR',
+    category: 'Defense & Tooling',
+    definition: 'Host-based software agent providing continuous telemetry collection, behavioral threat detection, memory inspection, and network containment capabilities.',
+    exampleOrContext: 'CrowdStrike Falcon, Microsoft Defender for Endpoint, SentinelOne.',
+  },
+  {
+    term: 'Command and Control',
+    acronym: 'C2 / C&C',
+    category: 'Threats',
+    definition: 'Infrastructure (servers, domains, cloud accounts) controlled by an attacker to send instructions to compromised systems and receive exfiltrated data.',
+    exampleOrContext: 'Cobalt Strike Team Server, Mythic, Sliver, Havoc.',
+  },
+  {
+    term: 'Lateral Movement',
+    category: 'Threats',
+    definition: 'Techniques used by adversaries to extend their access from an initial compromised endpoint to other systems within the internal network.',
+    exampleOrContext: 'Pass-the-Hash, PsExec, SSH key harvesting, WMI command execution.',
+  },
+  {
+    term: 'Privilege Escalation',
+    category: 'Threats',
+    definition: 'Exploiting a software vulnerability, design flaw, or configuration error to gain higher permission levels than initially granted (e.g., standard user to SYSTEM/root).',
+    exampleOrContext: 'Token impersonation, kernel exploits, sudo misconfigurations.',
+  },
+  {
+    term: 'Blast Radius',
+    category: 'Concepts',
+    definition: 'The total scope of systems, users, services, and data repositories that are compromised or at immediate risk of compromise during a security incident.',
+    exampleOrContext: 'Scoping whether a ransomware infection is confined to a single subnet or spans enterprise Active Directory.',
+  },
+  {
+    term: 'Order of Volatility',
+    category: 'Forensics',
+    definition: 'The sequence in which digital evidence should be captured based on how rapidly the data will degrade or be lost upon system state changes or power cycles.',
+    exampleOrContext: 'Defined in RFC 3227: CPU registers -> Cache -> RAM -> Network State -> Disk -> Backups.',
+  },
+  {
+    term: 'Chain of Custody',
+    category: 'Forensics',
+    definition: 'A chronological, verifiable documentation trail showing the custody, control, transfer, analysis, and disposition of digital or physical evidence.',
+    exampleOrContext: 'Recording who exported a disk image, where the forensic drive was stored, and who handled it.',
+  },
+  {
+    term: 'Zero-Day Vulnerability',
+    acronym: '0-day',
+    category: 'Threats',
+    definition: 'A software security flaw that is known to attackers or researchers but has no official vendor patch or mitigation available.',
+    exampleOrContext: 'Actively exploited flaws in VPN gateways or browser rendering engines before disclosure.',
+  },
+  {
+    term: 'Ransomware',
+    category: 'Threats',
+    definition: 'A class of malware designed to encrypt files on target systems and extort victims for decryption keys, often accompanied by data theft (double extortion).',
+    exampleOrContext: 'LockBit, BlackCat/ALPHV, Akira, Conti.',
+  },
+  {
+    term: 'Spearphishing',
+    category: 'Threats',
+    definition: 'A targeted phishing attempt aimed at a specific individual, organization, or executive, using customized social engineering context.',
+    exampleOrContext: 'Impersonating a corporate vendor requesting urgent payment routing updates.',
+  },
+  {
+    term: 'Adversary-in-the-Middle',
+    acronym: 'AiTM',
+    category: 'Threats',
+    definition: 'A phishing attack proxy where the attacker intercepts login credentials and session tokens in real time, effectively bypassing basic MFA.',
+    exampleOrContext: 'Reverse proxy phishing frameworks like Evilginx2.',
+  },
+  {
+    term: 'Data Loss Prevention',
+    acronym: 'DLP',
+    category: 'Defense & Tooling',
+    definition: 'Software strategy and tooling that monitors and blocks unauthorized transfer or exfiltration of sensitive data outside corporate boundaries.',
+    exampleOrContext: 'Blocking credit card numbers from being pasted into personal cloud storage or emailed externally.',
+  },
+  {
+    term: 'FIDO2 / WebAuthn',
+    category: 'Defense & Tooling',
+    definition: 'An open authentication standard providing cryptographic, phishing-resistant multi-factor authentication using public-key cryptography bound to an origin.',
+    exampleOrContext: 'YubiKeys, Windows Hello, Apple Passkeys.',
+  },
+  {
+    term: 'Sender Policy Framework',
+    acronym: 'SPF',
+    category: 'Defense & Tooling',
+    definition: 'An email authentication protocol that specifies which mail servers are authorized to send email on behalf of a specific domain.',
+    exampleOrContext: 'Published as a DNS TXT record (e.g., v=spf1 include:_spf.google.com ~all).',
+  },
+  {
+    term: 'DomainKeys Identified Mail',
+    acronym: 'DKIM',
+    category: 'Defense & Tooling',
+    definition: 'An email authentication technique that attaches a digital cryptographic signature to emails, verifying the message body and headers were not altered in transit.',
+    exampleOrContext: 'Verified using a public key published in the sending domain\'s DNS.',
+  },
+  {
+    term: 'Domain-based Message Authentication, Reporting, and Conformance',
+    acronym: 'DMARC',
+    category: 'Defense & Tooling',
+    definition: 'An email policy framework that instructs recipient mail servers how to treat messages that fail SPF or DKIM checks (none, quarantine, or reject).',
+    exampleOrContext: 'Enforcing p=reject stops attackers from spoofing legitimate corporate domains.',
+  },
+  {
+    term: 'Dwell Time',
+    category: 'Concepts',
+    definition: 'The total duration of time an adversary remains undetected inside a victim\'s environment between initial compromise and discovery.',
+    exampleOrContext: 'Industry average dwell time has decreased from months to roughly 8-14 days.',
+  },
+  {
+    term: 'Mean Time to Detect',
+    acronym: 'MTTD',
+    category: 'Concepts',
+    definition: 'The average amount of time required for security operations teams to discover and validate that an intrusion or incident is taking place.',
+    exampleOrContext: 'A key metric used by SOC directors to measure detection engineering effectiveness.',
+  },
+  {
+    term: 'Mean Time to Remediate',
+    acronym: 'MTTR',
+    category: 'Concepts',
+    definition: 'The average amount of time required from the moment an incident is confirmed to when it is fully contained, eradicated, and resolved.',
+    exampleOrContext: 'Includes time spent analyzing IOCs, pushing firewall blocks, and restoring services.',
+  },
+  {
+    term: 'Air-Gapping',
+    category: 'Defense & Tooling',
+    definition: 'A security measure where a computer or network is physically and logically isolated from unsecured networks, including the public internet.',
+    exampleOrContext: 'Air-gapped offline tape backups or industrial SCADA control networks.',
+  },
+  {
+    term: 'Honeypot / Honeytoken',
+    category: 'Defense & Tooling',
+    definition: 'A decoy system, fake file, or synthetic credential deliberately placed to detect and monitor unauthorized adversary interaction.',
+    exampleOrContext: 'A fake AWS access key left in a repository that triggers an immediate high-priority alert when used.',
+  },
+  {
+    term: 'General Data Protection Regulation',
+    acronym: 'GDPR',
+    category: 'Governance & Legal',
+    definition: 'European Union privacy regulation mandating strict data protection standards and a 72-hour notification deadline for personal data breaches.',
+    exampleOrContext: 'Article 33 mandates reporting breaches likely to result in risk to the rights and freedoms of natural persons.',
+  },
+  {
+    term: 'MITRE ATT&CK',
+    category: 'Concepts',
+    definition: 'A globally accessible knowledge base of adversary tactics and techniques based on real-world threat observations.',
+    exampleOrContext: 'Organized into 14 tactics including Initial Access, Execution, Persistence, Defense Evasion, and Exfiltration.',
+  },
+  {
+    term: 'Defanged Indicator',
+    category: 'Concepts',
+    definition: 'A modified URL, IP address, or domain intentionally altered to prevent accidental clicking or automated DNS resolution by security analysts.',
+    exampleOrContext: 'Replacing http with hxxp and periods with bracketed dots: hxxps://malicious[.]example[.]com.',
+  },
+  {
+    term: 'Living off the Land',
+    acronym: 'LotL',
+    category: 'Threats',
+    definition: 'An attack technique where adversaries use legitimate, pre-installed administrative operating system utilities to conduct malicious activities without dropping custom malware.',
+    exampleOrContext: 'Using powershell.exe, certutil.exe, wmic.exe, or bitsadmin.exe.',
+  },
+  {
+    term: 'Kerberoasting',
+    category: 'Threats',
+    definition: 'An Active Directory post-exploitation technique where an attacker requests Kerberos service tickets for accounts with Service Principal Names (SPNs) and cracks their passwords offline.',
+    exampleOrContext: 'Targets legacy service accounts running with weak, unrotated passwords.',
+  },
+  {
+    term: 'Post-Mortem / Post-Incident Review',
+    acronym: 'PIR',
+    category: 'Concepts',
+    definition: 'A formal review session held after an incident to analyze what happened, assess the effectiveness of the response, and identify systemic preventive actions.',
+    exampleOrContext: 'Conducted under a blameless mindset to foster open engineering feedback.',
+  },
+];
