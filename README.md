@@ -17,7 +17,7 @@ IncidentKit simulates a real-world Security Operations Center (SOC) incident res
 
 ## 🌟 Live Demo & Preview
 
-- **Live Application:** Deployed on Vercel's free tier: [https://incidentkit-incident-response-planner.vercel.app](https://incidentkit-incident-response-planner.vercel.app) *(or your deployed Vercel domain)*
+- **Live Application:** [https://incidentkit-incident-response-plann.vercel.app](https://incidentkit-incident-response-plann.vercel.app)
 - **GitHub Repository:** [https://github.com/GorillaBrain/incidentkit-incident-response-planner](https://github.com/GorillaBrain/incidentkit-incident-response-planner)
 
 ---
